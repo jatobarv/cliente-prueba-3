@@ -8,7 +8,14 @@
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
-            displayDogs(data);
+            if( navigator.onLine){
+                displayDogs(data);
+            }else{
+                if(localStorage.getItem('Perros')){
+                   displayDogs(JSON.parse(localStorage.getItem('Perros')));
+               }
+            }
+            
         }
     }
     xhttp.open('GET', url, true);
@@ -44,12 +51,6 @@
             dogsContainer.appendChild(dogContainer);
         }
         saveData("Perros", dogs);
-
-        if (localStorage.getItem("Perros")) {
-            adoptedDog = JSON.parse(localStorage.getItem("Perros"));
-            // console.log(toSave);
-            dogsContainer = document.getElementsByClassName("card").innerHTML = adoptedDog;
-        }
     }
 
     var saveData = function (key, data) {
