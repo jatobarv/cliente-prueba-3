@@ -3,7 +3,7 @@
     var adoptedDog = [];
 
     var xhttp = new XMLHttpRequest();
-    var url = "http://127.0.0.1:8000/posts/";
+    var url = "http://jatobarv.pythonanywhere.com/posts/";
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
