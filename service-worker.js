@@ -51,7 +51,7 @@ self.addEventListener('fetch', function (e) {
     var dataUrl = 'https://jatobarv.pythonanywhere.com/posts/';
     if (e.request.url.indexOf(dataUrl) > -1) {
         e.respondWith(
-            caches.open(dataCacheName).then(function (cache) {
+            caches.open(cacheName).then(function (cache) {
                 return fetch(e.request).then(function (response) {
                     cache.put(e.request.url, response.clone());
                     return response;
