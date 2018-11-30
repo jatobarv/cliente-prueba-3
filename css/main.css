@@ -1,0 +1,511 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccc;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+#container {
+    margin: 0 10px 5px 0;
+    width: 100%;
+}
+
+#nav {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    display: block;
+    float: left;
+    width: 100%;
+    background-color: rgb(44, 44, 44);
+    transition: margin-left 0.5s;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#menu {
+    display: none;
+}
+
+#side-menu {
+    position: fixed;
+    width: 0;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(44, 44, 44);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 30px;
+}
+
+.openbtn {
+    cursor: pointer;
+}
+
+#side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 40px;
+    margin-left: 50px;
+}
+
+#nav .logo img {
+    padding: 10px;
+    width: 250px;
+    float: left;
+}
+
+#nav .openbtn {
+    font-size: 35px;
+    float: right;
+    padding: 10px;
+}
+
+#side-menu ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+#side-menu li {
+    line-height: 50px;
+}
+
+#side-menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.socialmedia {
+    display: inline-block;
+}
+
+.socialmedia ul {
+    height: 20px;
+}
+
+.socialmedia li {
+    float: left;
+}
+
+.socialmedia li a {
+    display: block;
+    text-align: center;
+}
+
+.socialmedia img {
+    width: 56px;
+    height: 68px;
+}
+
+.carousel {
+    display: inline-block;
+    width: 800px;
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.carousel img {
+    width: 100%;
+    height: 600px;
+    max-height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mySlides {
+    display: none;
+    margin-bottom: 15px;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 1s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.mySlides .text {
+    color: white;
+    font-size: 14px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.info {
+    color: black;
+}
+
+.info img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rescue,
+.crowfunding,
+#gallery {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.card {
+    flex: 100%;
+    max-width: 100%;
+    padding: 0 4px;
+}
+
+.card img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+#gallery img {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#wifi img {
+    background-image: url(../imagenes/rescatados/Wifi_tn.jpg);
+    background: no-repeat;
+}
+
+.overlay {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.button {
+    color: black;
+    padding: 1em 2em;
+    margin: 1em;
+    border: 0;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: black;
+    transition: 0.5s;
+    color: whitesmoke;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal h2 {
+    font-size: 22px;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 6% auto;
+    padding: 20px;
+    width: 60%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen;
+    animation-duration: 1s;
+}
+
+label {
+    float: left;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#gallery .closebtn {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+}
+
+#gallery .closebtn:hover,
+.closebtn:focus {
+    color: black;
+    cursor: pointer;
+}
+
+footer {
+    color: white;
+    background-color: rgb(44, 44, 44);
+    padding-bottom: 2px;
+}
+
+footer p {
+    padding-top: 20px;
+}
+
+footer .socialmedia ul {
+    margin-right: 50px;
+    list-style-type: none;
+}
+
+@media screen and (min-width: 500px) {
+    .carousel img {
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #nav {
+        display: inline-block;
+    }
+
+    #menu a {
+        float: left;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        padding: 14px 16px;
+        color: white;
+    }
+
+    #menu a:hover {
+        color: black;
+        background-color: rgb(185, 185, 185);
+    }
+
+    #menu ul {
+        margin: 8px 0 0 400px;
+        list-style: none;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+
+    .carousel img {
+        max-height: 100%;
+    }
+
+    .mySlides h3 {
+        font-size: 20px;
+    }
+
+    .mySlides p {
+        font-size: 18px;
+    }
+
+    .info {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .rescue {
+        width: 40%;
+        margin: 0;
+        padding-right: 15px;
+        height: 90%;
+        margin-right: 30px;
+    }
+
+    .crowfunding {
+        width: 40%;
+        height: 90%;
+    }
+
+    #gallery {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    #gallery .image {
+        margin-top: 8px;
+        vertical-align: middle;
+    }
+
+    #wifi,
+    #maya {
+        height: 240px;
+    }
+
+    #oso,
+    #luna {
+        height: 250px;
+    }
+
+    #pexel,
+    #chocolate {
+        height: 500px;
+    }
+
+    .card {
+        flex: 50%;
+        max-width: 50%;
+    }
+
+    @media screen and (min-width:800px) {
+        .carousel {
+            width: 100%;
+        }
+
+        #gallery .image {
+            width: 100%;
+            height: 50%;
+        }
+
+        #maya {
+            height: 232.66px;
+        }
+
+        .card {
+            flex-basis: 33%;
+            padding-bottom: 10px;
+        }
+    }
+
+    @media screen and (min-width:900px) {
+        .carousel {
+            max-width: 90%;
+        }
+
+        .card {
+            flex-basis: 25%;
+            height: 100%;
+        }
+
+        #oso,
+        #luna {
+            height: 240px;
+        }
+
+        #gallery .image {
+            width: 100%;
+            height: 40%;
+        }
+    }
+
+    @media screen and (min-width:1000px) {
+        .card {
+            flex-shrink: 1;
+        }
+
+        .carousel img {
+            height: 800px;
+        }
+
+        #bigotes {
+            height: 600px;
+        }
+
+        .openbtn,
+        #side-menu .closebtn {
+            display: none;
+        }
+
+        #menu {
+            display: inline;
+        }
+    }
+}
